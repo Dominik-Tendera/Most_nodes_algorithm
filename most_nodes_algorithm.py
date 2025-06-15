@@ -23,7 +23,11 @@ def find_best_path(filename: str):
                 row = [int(x) for x in parts[1:]]
                 matrix.append(row)
         i += 1
-    
+        
+    if len(matrix) > 20 or any(len(row) > 20 for row in matrix):
+        print("Graph is too big")
+        return
+        
     n = len(matrix)
     # Build adjacency list: graph[node] = list of (neighbor, cost)
     graph = {u: [] for u in range(1, n+1)}
@@ -75,3 +79,5 @@ def find_best_path(filename: str):
     print("Total time cost:", best_cost)
 
 find_best_path("graph_values.txt")
+
+input("\nPress Enter to close window...")
