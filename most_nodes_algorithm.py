@@ -24,9 +24,6 @@ def find_best_path(filename: str):
                 matrix.append(row)
         i += 1
         
-    if len(matrix) > 20 or any(len(row) > 20 for row in matrix):
-        print("Graph is too big")
-        return
         
     n = len(matrix)
     # Build adjacency list: graph[node] = list of (neighbor, cost)
