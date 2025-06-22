@@ -59,7 +59,7 @@ def find_best_path(filename: str):
             best_path = list(path)
             best_cost = current_cost
         
-        # Explore neighbors
+        # Explore neighbors recursively
         for (nbr, w) in graph[node]:
             if not visited[nbr] and current_cost + w <= time_limit:
                 visited[nbr] = True
